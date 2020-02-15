@@ -46,11 +46,8 @@ func has_same_priority(state_name : String) -> bool:
 func update_active(value: bool) -> void:
 	self._active = value
 
-func desactivate() -> void:
-	pass
-
-func activate() -> void:
-	pass
+func turn_on_off(value: bool) -> void:
+	self._active = value
 
 func _change_state(state_name: String) -> void:
 	if self._active and not self.states_stack.empty():

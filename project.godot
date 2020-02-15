@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "Idle",
+"language": "GDScript",
+"path": "res://character/player/movementMemory/movementStates/idle.gd"
+}, {
+"base": "Node",
 "class": "Machine",
 "language": "GDScript",
 "path": "res://util/stateMachine.gd"
@@ -18,10 +23,23 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://util/state.gd"
+}, {
+"base": "Node",
+"class": "UtilFunctions",
+"language": "GDScript",
+"path": "res://util/utilFunctions.gd"
+}, {
+"base": "Node",
+"class": "Walking",
+"language": "GDScript",
+"path": "res://character/player/movementMemory/movementStates/walk.gd"
 } ]
 _global_script_class_icons={
+"Idle": "",
 "Machine": "",
-"State": ""
+"State": "",
+"UtilFunctions": "",
+"Walking": ""
 }
 
 [application]
