@@ -1,0 +1,192 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://character/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/Actors_1.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=6]
+resource_name = "IdleEast"
+length = 0.001
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IdleNorth"
+length = 0.001
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 37 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "IdleSouth"
+length = 0.001
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "IdleWest"
+length = 0.001
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "WalkingEast"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "WalkingNorth"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "WalkingSouth"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "WalkingWest"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14 ]
+}
+
+[node name="RedKnight" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+frame = 1
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/IdleEast = SubResource( 6 )
+anims/IdleNorth = SubResource( 5 )
+anims/IdleSouth = SubResource( 7 )
+anims/IdleWest = SubResource( 8 )
+anims/WalkingEast = SubResource( 1 )
+anims/WalkingNorth = SubResource( 2 )
+anims/WalkingSouth = SubResource( 3 )
+anims/WalkingWest = SubResource( 4 )
+
+[node name="MovementStateMachine" parent="." index="3"]
+states_map = {
+"Idle": NodePath("Idle"),
+"Walking": NodePath("Walking")
+}
+INITIAL_STATE = NodePath("../../Knight/MovementStateMachine/Idle")
+[connection signal="move" from="MovementStateMachine/Walking" to="." method="move"]

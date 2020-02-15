@@ -18,3 +18,7 @@ func handle_input(input: InputEvent) -> void:
 		self.emit_signal("finished", "Walking")
 	elif move_y_dir:
 		self.emit_signal("finished", "Walking")
+
+# warning-ignore:unused_argument
+func move(delta: float) -> void:
+	pass

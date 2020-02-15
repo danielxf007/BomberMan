@@ -39,7 +39,7 @@ func handle_input(input: InputEvent) -> void:
 		 "Idle"+self.ANI_NAMES[self.move_dir])
 		self.move_dir = Vector2()
 
-func walk(delta: float) -> void:
+func move(delta: float) -> void:
 	if self.move_dir:
 		if self.move_dir.x > 0 or self.move_dir.y > 0:
 			self.speed = self.utilFunctions.calculate_speed_with_range(0.0,
