@@ -47,11 +47,10 @@ func move(delta: float) -> void:
 	if self.move_dir:
 		if self.move_dir.x > 0 or self.move_dir.y > 0:
 			self.speed = self.utilFunctions.calculate_speed_with_range(0.0,
-			self.MAX_SPEED, self.ACCELERATION, self.speed, delta)
+			self.MAX_SPEED, self.speed, self.ACCELERATION, delta)
 		elif self.move_dir.x < 0 or self.move_dir.y < 0:
 			self.speed = self.utilFunctions.calculate_speed_with_range(
-			-self.MAX_SPEED, 0.0, -self.ACCELERATION,
-			 self.speed, delta)
+			-self.MAX_SPEED, 0.0, self.speed, -self.ACCELERATION, delta)
 		print(speed)
 		self.emit_signal("move", self.move_dir*abs(self.speed))
 	else:

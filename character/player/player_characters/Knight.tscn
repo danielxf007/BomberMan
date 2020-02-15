@@ -198,6 +198,6 @@ states_map = {
 [node name="Walking" parent="MovementStateMachine" index="1"]
 priority = 1
 MAX_SPEED = 100.0
-ACCELERATION = 25.0
+ACCELERATION = 200.0
 [connection signal="move" from="MovementStateMachine/Walking" to="." method="move"]
 [connection signal="move_dir_animation" from="MovementStateMachine/Walking" to="AnimationPlayer" method="play_animation"]
