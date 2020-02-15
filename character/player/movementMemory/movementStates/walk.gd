@@ -51,7 +51,6 @@ func move(delta: float) -> void:
 		elif self.move_dir.x < 0 or self.move_dir.y < 0:
 			self.speed = self.utilFunctions.calculate_speed_with_range(
 			-self.MAX_SPEED, 0.0, self.speed, -self.ACCELERATION, delta)
-		print(speed)
 		self.emit_signal("move", self.move_dir*abs(self.speed))
 	else:
 		self.emit_signal("finished", "Idle")

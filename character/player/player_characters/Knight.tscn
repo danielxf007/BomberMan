@@ -174,7 +174,6 @@ tracks/0/keys = {
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-frame = 1
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 9 )
