@@ -57,6 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Bomber Man"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [rendering]

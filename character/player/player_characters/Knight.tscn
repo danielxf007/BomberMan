@@ -1,7 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://character/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://art/Actors_1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 20.6522, 20.1497 )
 
 [sub_resource type="Animation" id=6]
 resource_name = "IdleEast"
@@ -173,6 +176,9 @@ tracks/0/keys = {
 texture = ExtResource( 2 )
 frame = 1
 
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 9 )
+
 [node name="AnimationPlayer" parent="." index="2"]
 anims/IdleEast = SubResource( 6 )
 anims/IdleNorth = SubResource( 5 )
@@ -188,5 +194,10 @@ states_map = {
 "Idle": NodePath("Idle"),
 "Walking": NodePath("Walking")
 }
-INITIAL_STATE = NodePath("../../Knight/MovementStateMachine/Idle")
+
+[node name="Walking" parent="MovementStateMachine" index="1"]
+priority = 1
+MAX_SPEED = 100.0
+ACCELERATION = 25.0
 [connection signal="move" from="MovementStateMachine/Walking" to="." method="move"]
+[connection signal="move_dir_animation" from="MovementStateMachine/Walking" to="AnimationPlayer" method="play_animation"]
