@@ -46,3 +46,6 @@ func add_vectors(vector1: Vector2, vector2: Vector2) -> Vector2:
 
 func multiply_vector_by_scalar(scalar, vector: Vector2) -> Vector2:
 	return vector*scalar
+
+func has_reached_upper_bound(upperBound, number) -> bool:
+	return number == upperBound
