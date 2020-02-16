@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Sprite",
+"class": "Cell",
+"language": "GDScript",
+"path": "res://cell/cell.gd"
+}, {
 "base": "Node",
 "class": "Idle",
 "language": "GDScript",
@@ -45,6 +50,7 @@ _global_script_classes=[ {
 "path": "res://character/player/movementMemory/movementStates/walk.gd"
 } ]
 _global_script_class_icons={
+"Cell": "",
 "Idle": "",
 "Machine": "",
 "MovementStateMachine": "",
@@ -59,6 +65,20 @@ _global_script_class_icons={
 config/name="Bomber Man"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=640
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="bomb"
+2d_physics/layer_3="cell"
+2d_physics/layer_4="enemy"
+2d_physics/layer_5="obstacles"
+2d_physics/layer_6="objects"
 
 [rendering]
 
