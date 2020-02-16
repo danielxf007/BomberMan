@@ -5,9 +5,10 @@
 
 [node name="Main" type="Node"]
 
-[node name="RedKnight" parent="." instance=ExtResource( 1 )]
-
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -1 )
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 8, 1, 0, 15, 0, 0, 65538, 0, 0, 262155, 0, 0, 327684, 0, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 0, 0, 2, 1, 0, 65536, 0, 0, 65537, 1, 0, 65538, 0, 0, 131072, 1, 0, 131073, 0, 0, 131074, 1, 0 )
+
+[node name="RedKnight" parent="." instance=ExtResource( 1 )]
