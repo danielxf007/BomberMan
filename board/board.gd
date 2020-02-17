@@ -1,6 +1,6 @@
 extends Node
 
-class_name GameMap
+class_name Board
 
 export(Vector2) var cell_dimensions = Vector2(1, 1)
 export(Vector2) var board_top_pos: Vector2 = Vector2()
