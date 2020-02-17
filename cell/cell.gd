@@ -12,3 +12,6 @@ func set_element(new_element) -> void:
 
 func clear_element() -> void:
 	self.element = null
+
+func is_occupied() -> bool:
+	return self.element != null

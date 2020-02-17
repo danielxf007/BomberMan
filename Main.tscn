@@ -11,6 +11,7 @@
 script = ExtResource( 4 )
 cell_dimensions = Vector2( 64, 64 )
 board_top_pos = Vector2( 32, 32 )
+CELL_CONTAINER_SIZE = Vector2( 16, 16 )
 ON_CELL = ExtResource( 3 )
 OFF_CELL = ExtResource( 2 )
 
