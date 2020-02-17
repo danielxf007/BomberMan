@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://cell/cell.gd"
 }, {
 "base": "Node",
+"class": "GameMap",
+"language": "GDScript",
+"path": "res://map/game_map.gd"
+}, {
+"base": "Node",
 "class": "Idle",
 "language": "GDScript",
 "path": "res://character/player/movementMemory/movementStates/idle.gd"
@@ -40,11 +45,6 @@ _global_script_classes=[ {
 "path": "res://util/state.gd"
 }, {
 "base": "Node",
-"class": "TileMapState",
-"language": "GDScript",
-"path": "res://tileMapState/tileMapState.gd"
-}, {
-"base": "Node",
 "class": "UtilFunctions",
 "language": "GDScript",
 "path": "res://util/utilFunctions.gd"
@@ -56,12 +56,12 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Cell": "",
+"GameMap": "",
 "Idle": "",
 "Machine": "",
 "MovementStateMachine": "",
 "Player": "",
 "State": "",
-"TileMapState": "",
 "UtilFunctions": "",
 "Walking": ""
 }

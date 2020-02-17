@@ -1,6 +1,6 @@
 extends Node
 
-class_name TileMapState
+class_name GameMap
 
 export(Vector2) var cell_dimensions = Vector2(1, 1)
 export(Vector2) var board_top_pos: Vector2 = Vector2()
@@ -94,4 +94,3 @@ func organize_matrix_of_cells(flag: bool, matrix_size: Vector2,
 on_cell: Texture, off_cell: Texture) -> void:
 	self.organize_on_cells(flag, matrix_size, on_cell)
 	self.organize_off_cells(flag, matrix_size, off_cell)
-
