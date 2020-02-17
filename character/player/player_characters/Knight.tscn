@@ -3,10 +3,10 @@
 [ext_resource path="res://character/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://art/Actors_1.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.6522, 20.1497 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "IdleEast"
 length = 0.001
 step = 0.0
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ 25 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "IdleNorth"
 length = 0.001
 step = 0.0
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ 37 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "IdleSouth"
 length = 0.001
 step = 0.0
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "IdleWest"
 length = 0.001
 step = 0.0
@@ -74,8 +74,7 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "WalkingEast"
+[sub_resource type="Animation" id=6]
 length = 0.75
 loop = true
 step = 0.25
@@ -92,8 +91,7 @@ tracks/0/keys = {
 "values": [ 24, 25, 26 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "WalkingNorth"
+[sub_resource type="Animation" id=7]
 length = 0.75
 loop = true
 step = 0.25
@@ -122,8 +120,7 @@ tracks/1/keys = {
 "values": [ 36, 37, 38 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "WalkingSouth"
+[sub_resource type="Animation" id=8]
 length = 0.75
 loop = true
 step = 0.25
@@ -152,8 +149,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "WalkingWest"
+[sub_resource type="Animation" id=9]
 length = 0.75
 loop = true
 step = 0.25
@@ -176,17 +172,17 @@ tracks/0/keys = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-anims/IdleEast = SubResource( 6 )
-anims/IdleNorth = SubResource( 5 )
-anims/IdleSouth = SubResource( 7 )
-anims/IdleWest = SubResource( 8 )
-anims/WalkingEast = SubResource( 1 )
-anims/WalkingNorth = SubResource( 2 )
-anims/WalkingSouth = SubResource( 3 )
-anims/WalkingWest = SubResource( 4 )
+anims/IdleEast = SubResource( 2 )
+anims/IdleNorth = SubResource( 3 )
+anims/IdleSouth = SubResource( 4 )
+anims/IdleWest = SubResource( 5 )
+anims/WalkingEast = SubResource( 6 )
+anims/WalkingNorth = SubResource( 7 )
+anims/WalkingSouth = SubResource( 8 )
+anims/WalkingWest = SubResource( 9 )
 
 [node name="MovementStateMachine" parent="." index="3"]
 states_map = {
