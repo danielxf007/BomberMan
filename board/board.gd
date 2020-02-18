@@ -1,5 +1,5 @@
 extends Node
-
+signal board_created(board)
 class_name Board
 
 export(Vector2) var cell_dimensions = Vector2(1, 1)
@@ -23,6 +23,10 @@ func _ready():
 	preload("res://cell/Cell.tscn"))
 	self.organize_matrix_of_cells(self.PATTERN_ON_OFF, 
 	self.board_size, self.ON_CELL, self.OFF_CELL)
+	for element in self.get_tree().get_nodes_in_group("board_listener"):
+# warning-ignore:return_value_discarded
+		self.connect("board_created", element, "_on_Board_board_created")
+	self.emit_signal("board_created", self)
 
 func create_matrix(matrix_top_pos: Vector2, dimensions: Vector2,
  cell_size: Vector2, cell_container_size: Vector2,

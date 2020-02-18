@@ -49,3 +49,12 @@ func multiply_vector_by_scalar(scalar, vector: Vector2) -> Vector2:
 
 func has_reached_upper_bound(upperBound, number) -> bool:
 	return number == upperBound
+
+func number_in_range(lower_bound, upper_bound, number) -> bool:
+	return lower_bound <= number and number <= upper_bound
+
+func point_inside_box(box_pos: Vector2, box_width,
+ box_height, point: Vector2) -> bool:
+	return self.number_in_range(box_pos.x - box_width,
+	 box_pos.x + box_width, point.x) and self.number_in_range(
+		box_pos.y - box_height, box_pos.y + box_height, point.y)

@@ -194,5 +194,9 @@ states_map = {
 priority = 1
 MAX_SPEED = 100.0
 ACCELERATION = 200.0
+
+[node name="BombPoint" parent="." index="5"]
+position = Vector2( 0, 15 )
+[connection signal="place_bomb" from="." to="BombPlacerSystem" method="place_bomb"]
 [connection signal="move" from="MovementStateMachine/Walking" to="." method="move"]
 [connection signal="move_dir_animation" from="MovementStateMachine/Walking" to="AnimationPlayer" method="play_animation"]

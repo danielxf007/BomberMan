@@ -23,13 +23,15 @@ func get_free_cells() -> Array:
 func get_player_coordinates_on_board() -> Tuple:
 	var board_coord: Tuple = Tuple.new(null, null)
 	var free_cells = self.get_free_cells()
-	var min_distance = Vector2(0, 0)
+	var min_distance = null
 	var cell: Cell
 	for free_cell in free_cells:
 		cell = free_cell.second_element
-		if (cell.global_position.distance_to(self.player_node.global_position)
-		 <= min_distance):
-			min_distance = cell.global_position.distance_to(
-				self.player_node.global_position)
+		var distance = cell.global_position.distance_to(
+			self.player_node.global_position)
+		if not min_distance:
+			min_distance = distance
+		elif (distance <= min_distance):
+			min_distance = distance
 			board_coord = free_cell.first_element
 	return board_coord
