@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://character/player/coodinates_conversor/coordinates_conversor.gd"
 }, {
 "base": "Node",
+"class": "Explosions",
+"language": "GDScript",
+"path": "res://explosions/explosions.gd"
+}, {
+"base": "Node",
 "class": "Idle",
 "language": "GDScript",
 "path": "res://character/player/movementMemory/movementStates/idle.gd"
@@ -74,6 +79,7 @@ _global_script_class_icons={
 "BombPlacerSystem": "",
 "Cell": "",
 "CoordinatesConversor": "",
+"Explosions": "",
 "Idle": "",
 "Machine": "",
 "MovementStateMachine": "",
