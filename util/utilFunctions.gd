@@ -59,3 +59,9 @@ func point_inside_box(box_pos: Vector2, box_width,
 	 box_pos.x + box_width, point.x) and self.number_in_range(
 		box_pos.y - box_height, box_pos.y + box_height, point.y)
 
+func create_column_matrix(matrix: Array, column: int) -> Array:
+	var column_m: Array = []
+	for i in range(0, matrix.size()):
+		column_m.append(matrix[i][column])
+	return column_m
+	

@@ -6,7 +6,7 @@ var util_f: UtilFunctions = UtilFunctions.new()
 func cell_content_can_be_destroyed(cell: Cell) -> bool:
 	return cell.element.has_method("destroy")
 
-func row_explosion(_range: Range, column_index: int,
+func row_explosion(_range: Array, column_index: int,
 row_cells: Array) -> Array:
 	var cell: Cell
 	var row_explosion_range: Array = []
@@ -23,7 +23,7 @@ row_cells: Array) -> Array:
 			return row_explosion_range
 	return row_explosion_range
 
-func column_explosion(_range: Range, row_index: int,
+func column_explosion(_range: Array, row_index: int,
 columns_cells: Array) -> Array:
 	var cell: Cell
 	var column_explosion_range: Array = []
