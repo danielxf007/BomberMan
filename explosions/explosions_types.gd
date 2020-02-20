@@ -1,6 +1,5 @@
 extends Node
-
-class_name Explosions
+class_name ExplosionsType
 
 var util_f: UtilFunctions = UtilFunctions.new()
 func cell_content_can_be_destroyed(cell: Cell) -> bool:
