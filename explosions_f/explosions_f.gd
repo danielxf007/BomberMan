@@ -1,7 +1,8 @@
 extends Node
-class_name ExplosionsType
+class_name ExplosionF
 
 var util_f: UtilFunctions = UtilFunctions.new()
+
 func cell_content_can_be_destroyed(cell: Cell) -> bool:
 	return cell.element.has_method("destroy")
 
@@ -44,13 +45,10 @@ func diagonal_explosions_types(explosion_type: int) -> Tuple:
 	match explosion_type:
 		0: 
 			movement_type = Tuple.new(1, -1)
-			break
 		1:
 			movement_type = Tuple.new(-1, -1)
-			break
 		2:
 			movement_type = Tuple.new(-1, 1)
-			break
 		3:
 			movement_type = Tuple.new(1, 1)
 	return movement_type

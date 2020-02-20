@@ -58,3 +58,4 @@ func point_inside_box(box_pos: Vector2, box_width,
 	return self.number_in_range(box_pos.x - box_width,
 	 box_pos.x + box_width, point.x) and self.number_in_range(
 		box_pos.y - box_height, box_pos.y + box_height, point.y)
+

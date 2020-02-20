@@ -40,9 +40,9 @@ _global_script_classes=[ {
 "path": "res://explosion/explosion.gd"
 }, {
 "base": "Node",
-"class": "ExplosionsType",
+"class": "ExplosionF",
 "language": "GDScript",
-"path": "res://explosions/explosions_types.gd"
+"path": "res://explosions_f/explosions_f.gd"
 }, {
 "base": "Node",
 "class": "Idle",
@@ -91,7 +91,7 @@ _global_script_class_icons={
 "Cell": "",
 "CoordinatesConversor": "",
 "Explosion": "",
-"ExplosionsType": "",
+"ExplosionF": "",
 "Idle": "",
 "Machine": "",
 "MovementStateMachine": "",

@@ -2,4 +2,4 @@ extends Node
 
 class_name BombExplosions
 
-var explosions: ExplosionsType
+var explosionF: ExplosionF = ExplosionF.new()
