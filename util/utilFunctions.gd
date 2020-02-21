@@ -72,6 +72,6 @@ func get_dimensions_matrix(matrix: Array) -> Tuple:
 	return Tuple.new(matrix.size(), column_n) 
 
 func is_inside_matrix(matrix_dim: Tuple, coord: Tuple) -> bool:
-	return (self.number_in_range(0, matrix_dim.first_element,
+	return (self.number_in_range(0, matrix_dim.first_element-1,
 	 coord.first_element) and self.number_in_range(0,
-	 matrix_dim.second_element, coord.second_element))
+	 matrix_dim.second_element-1, coord.second_element))

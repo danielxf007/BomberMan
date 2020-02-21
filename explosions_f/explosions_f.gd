@@ -29,7 +29,6 @@ matrix_of_cells: Array) -> Array:
 	var cell: Cell
 	var column_explosion_range: Array = []
 	var indexes: Tuple
-	print(column_index)
 	for i in _range:
 		indexes = Tuple.new(i, column_index)
 		if self.util_f.is_inside_matrix(self.util_f.get_dimensions_matrix(
