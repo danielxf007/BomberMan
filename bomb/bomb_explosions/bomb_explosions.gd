@@ -6,12 +6,12 @@ var explosionF: ExplosionF = ExplosionF.new()
 var util_f: UtilFunctions = UtilFunctions.new()
 
 func get_left_range(left_range: int, explosion_point: Tuple) -> Array:
-	return range(explosion_point.first_element - left_range,
-	explosion_point.first_element)
+	return range(explosion_point.second_element - left_range,
+	explosion_point.second_element)
 
 func get_right_range(right_range: int, explosion_point: Tuple) -> Array:
-	return range(explosion_point.first_element +1,
-	explosion_point.first_element + right_range) 
+	return range(explosion_point.second_element +1,
+	explosion_point.second_element + right_range +1) 
 
 func get_up_range(up_range: int, explosion_point: Tuple) -> Array:
 	return range(explosion_point.first_element - up_range,
