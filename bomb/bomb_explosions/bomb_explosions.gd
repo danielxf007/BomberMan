@@ -19,7 +19,7 @@ func get_up_range(up_range: int, explosion_point: Tuple) -> Array:
 
 func get_down_range(down_range: int, explosion_point: Tuple) -> Array:
 	return range(explosion_point.first_element+1,
-	explosion_point.first_element + down_range)
+	explosion_point.first_element + down_range +1)
 
 func get_explosion_row(explosion_range: Array, explosion_x: int,
 row_cells: Array) -> Array:

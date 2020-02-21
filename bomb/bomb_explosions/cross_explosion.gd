@@ -12,7 +12,6 @@ func explode( explosion_point: Tuple, matrix_of_cells: Array) -> Array:
 		self.get_left_range(self.LEFT_RANGE, explosion_point),
 		explosion_point, matrix_of_cells
 	)
-	print(self.get_right_range(self.RIGHT_RANGE, explosion_point))
 	var right_explosion: Array = self.get_row_explosion(
 		self.get_right_range(self.RIGHT_RANGE, explosion_point),
 		explosion_point, matrix_of_cells
