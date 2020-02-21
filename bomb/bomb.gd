@@ -4,7 +4,6 @@ class_name Bomb
 export(int) var TYPE: int = 1
 var board_coordinates: Tuple
 var explosion_packed_scene: PackedScene = preload("res://explosion/Explosion.tscn")
-var cross_explosion: CrossExplosion = CrossExplosion.new()
 var game_board: Board
 var explosions: Array = []
 
@@ -27,7 +26,6 @@ func create_explosions(explosion_range_size: int) -> void:
 	for i in range(0, explosion_range_size):
 		explosion = self.explosion_packed_scene.instance()
 		self.explosions.append(explosion)
-	print(self.explosions)
 
 func place_explosions(explosions_coordinates: Array) -> void:
 	var explosion: Explosion
@@ -68,11 +66,11 @@ func finished() -> void:
 	self.queue_free()
 
 func explode() -> void:
-	var explosion_coordinates: Array = self.cross_explosion.explode(
+	var explosion_coordinates: Array = $CrossExplosion.explode(
 		board_coordinates, self.game_board.matrix_of_cells)
+	print(explosion_coordinates)
 	self.create_explosions(explosion_coordinates.size())
 	self.place_explosions(explosion_coordinates)
 
 func bomb_explosion() -> void:
 	self.explode()
-	self.finished()
