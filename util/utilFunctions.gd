@@ -64,4 +64,14 @@ func create_column_matrix(matrix: Array, column: int) -> Array:
 	for i in range(0, matrix.size()):
 		column_m.append(matrix[i][column])
 	return column_m
-	
+
+func get_dimensions_matrix(matrix: Array) -> Tuple:
+	var column_n: int = 0
+	for element in matrix[0]:
+		column_n += 1
+	return Tuple.new(matrix.size(), column_n) 
+
+func is_inside_matrix(matrix_dim: Tuple, coord: Tuple) -> bool:
+	return (self.number_in_range(0, matrix_dim.first_element,
+	 coord.first_element) and self.number_in_range(0,
+	 matrix_dim.second_element, coord.second_element))

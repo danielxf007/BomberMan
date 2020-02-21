@@ -22,23 +22,31 @@ func get_down_range(down_range: int, explosion_point: Tuple) -> Array:
 	explosion_point.first_element + down_range +1)
 
 func get_explosion_row(explosion_range: Array, explosion_x: int,
-row_cells: Array) -> Array:
+matrix_of_cells: Array) -> Array:
 	return self.explosionF.row_explosion(explosion_range, explosion_x,
-	row_cells)
+	matrix_of_cells)
 
 func get_explosion_column(explosion_range: Array, explosion_y: int,
-columns_cells: Array) -> Array:
+matrix_of_cells: Array) -> Array:
 	return self.explosionF.column_explosion(explosion_range, explosion_y,
-	columns_cells)
+	matrix_of_cells)
 
 func get_row_explosion(_range: Array, explosion_point: Tuple,
 matrix_of_cells: Array) -> Array:
 	return self.get_explosion_row(
 		_range, explosion_point.first_element,
-		matrix_of_cells[explosion_point.first_element])
+		matrix_of_cells)
 
 func get_column_explosion(_range: Array, explosion_point: Tuple,
 matrix_of_cells: Array) -> Array:
 	return self.get_explosion_column(_range, explosion_point.second_element,
-	self.util_f.create_column_matrix(matrix_of_cells,
-	 explosion_point.first_element))
+	matrix_of_cells)
+
+func filter_explosions(matrix_of_cells: Array, explosions: Array) -> Array:
+	var filtered_explosions: Array = []
+	var matrix_dim: Tuple = self.util_f.get_dimensions_matrix(
+		matrix_of_cells)
+	for explosion in explosions:
+		if self.util_f.is_inside_matrix(matrix_dim, explosion):
+			filtered_explosions.append(explosion)
+	return filtered_explosions

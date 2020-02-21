@@ -62,7 +62,7 @@ tracks/0/keys = {
 
 [node name="Bomb" type="Sprite"]
 scale = Vector2( 0.187, 0.187 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="."]
