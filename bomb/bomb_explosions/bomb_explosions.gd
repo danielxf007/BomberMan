@@ -35,7 +35,7 @@ func get_row_explosion(_range: Array, explosion_point: Tuple,
 matrix_of_cells: Array) -> Array:
 	return self.get_explosion_row(
 		_range, explosion_point.first_element,
-		matrix_of_cells[explosion_point.second_element])
+		matrix_of_cells[explosion_point.first_element])
 
 func get_column_explosion(_range: Array, explosion_point: Tuple,
 matrix_of_cells: Array) -> Array:

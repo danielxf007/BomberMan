@@ -68,9 +68,15 @@ func finished() -> void:
 func explode() -> void:
 	var explosion_coordinates: Array = $CrossExplosion.explode(
 		board_coordinates, self.game_board.matrix_of_cells)
-	print(explosion_coordinates)
 	self.create_explosions(explosion_coordinates.size())
 	self.place_explosions(explosion_coordinates)
+
+func print_coor(explo_coor: Array) -> void:
+	for element in explo_coor:
+		var v = Vector2()
+		v.x = element.first_element
+		v.y = element.second_element
+		print(v)
 
 func bomb_explosion() -> void:
 	self.explode()

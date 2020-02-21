@@ -6,7 +6,7 @@ var util_f: UtilFunctions = UtilFunctions.new()
 func cell_content_can_be_destroyed(cell: Cell) -> bool:
 	return cell.element.has_method("destroy")
 
-func row_explosion(_range: Array, column_index: int,
+func row_explosion(_range: Array, row_index: int,
 row_cells: Array) -> Array:
 	var cell: Cell
 	var row_explosion_range: Array = []
@@ -14,16 +14,16 @@ row_cells: Array) -> Array:
 	for j in _range:
 		cell = row_cells[j]
 		if not cell.is_occupied():
-			indexes = Tuple.new(j, column_index)
+			indexes = Tuple.new(row_index, j)
 			row_explosion_range.append(indexes)
 		elif self.cell_content_can_be_destroyed(cell):
-			indexes = Tuple.new(j, column_index)
+			indexes = Tuple.new(row_index, j)
 			row_explosion_range.append(indexes)
 		elif not self.cell_content_can_be_destroyed(cell):
 			return row_explosion_range
 	return row_explosion_range
 
-func column_explosion(_range: Array, row_index: int,
+func column_explosion(_range: Array, column_index: int,
 columns_cells: Array) -> Array:
 	var cell: Cell
 	var column_explosion_range: Array = []
@@ -31,10 +31,10 @@ columns_cells: Array) -> Array:
 	for i in _range:
 		cell = columns_cells[i]
 		if not cell.is_occupied():
-			indexes = Tuple.new(i, row_index)
+			indexes = Tuple.new(i, column_index)
 			column_explosion_range.append(indexes)
 		elif self.cell_content_can_be_destroyed(cell):
-			indexes = Tuple.new(i, row_index)
+			indexes = Tuple.new(i, column_index)
 			column_explosion_range.append(indexes)
 		elif not self.cell_content_can_be_destroyed(cell):
 			return column_explosion_range
