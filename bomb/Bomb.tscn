@@ -87,5 +87,10 @@ one_shot = true
 
 [node name="ExplosionReadyTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 [connection signal="timeout" from="PlacedBombTimer" to="." method="_on_PlacedBombTimer_timeout"]
 [connection signal="timeout" from="ExplosionReadyTimer" to="." method="_on_ExplosionReadyTimer_timeout"]
+[connection signal="timeout" from="ExplosionTimer" to="." method="_on_ExplosionTimer_timeout"]

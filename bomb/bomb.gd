@@ -55,15 +55,6 @@ func all_explosions_finished() -> bool:
 			return false
 	return true
 
-func finished() -> void:
-	while true:
-		if self.all_explosions_finished():
-			break
-	var explosion: Explosion
-	while self.explosions.size() != 0:
-		explosion = self.explosions.pop_back()
-		explosion.explosion_finished()
-	self.queue_free()
 
 func explode() -> void:
 	var explosion_coordinates: Array = $CrossExplosion.explode(
@@ -80,3 +71,7 @@ func print_coor(explo_coor: Array) -> void:
 
 func bomb_explosion() -> void:
 	self.explode()
+
+
+func _on_ExplosionTimer_timeout():
+	self.queue_free()

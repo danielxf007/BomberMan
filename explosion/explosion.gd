@@ -2,11 +2,8 @@ extends Sprite
 
 class_name Explosion
 
-var finished: bool = false
-
 func _ready():
 	$Timer.start()
-
 func _on_Area2D_body_entered(body):
 	if body.has_method("destroy"):
 		body.destroy()
@@ -17,7 +14,4 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Timer_timeout():
-	self.finished = true
-
-func explosion_finished() -> void:
 	self.queue_free()
