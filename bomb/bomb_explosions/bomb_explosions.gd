@@ -39,6 +39,6 @@ matrix_of_cells: Array) -> Array:
 
 func get_column_explosion(_range: Array, explosion_point: Tuple,
 matrix_of_cells: Array) -> Array:
-	return self.get_column_explosion(_range, explosion_point.second_element,
+	return self.get_explosion_column(_range, explosion_point.second_element,
 	self.util_f.create_column_matrix(matrix_of_cells,
 	 explosion_point.first_element))

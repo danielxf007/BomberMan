@@ -83,11 +83,9 @@ UP_RANGE = 2
 DOWN_RANGE = 2
 
 [node name="PlacedBombTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="ExplosionReadyTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 [connection signal="timeout" from="PlacedBombTimer" to="." method="_on_PlacedBombTimer_timeout"]
 [connection signal="timeout" from="ExplosionReadyTimer" to="." method="_on_ExplosionReadyTimer_timeout"]

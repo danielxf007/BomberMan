@@ -6,7 +6,7 @@
 [ext_resource path="res://character/player/movementMemory/movementStates/walk.gd" type="Script" id=4]
 [ext_resource path="res://character/player/player.gd" type="Script" id=5]
 [ext_resource path="res://character/player/animationPlayer/AnimationPlayer.gd" type="Script" id=6]
-[ext_resource path="res://character/player/bomb_placer/bomb_placer.gd" type="Script" id=7]
+[ext_resource path="res://character/player/bomb_placer/BombPlacer.tscn" type="PackedScene" id=7]
 
 [node name="Player" instance=ExtResource( 1 )]
 collision_layer = 59
@@ -36,8 +36,7 @@ script = ExtResource( 4 )
 
 [node name="BombPoint" type="Position2D" parent="." index="5"]
 
-[node name="BombPlacerSystem" type="Node" parent="." index="6" groups=[
+[node name="BombPlacer" parent="." index="6" groups=[
 "board_listener",
-]]
-script = ExtResource( 7 )
+] instance=ExtResource( 7 )]
 PLAYER_NODE_PATH = NodePath("..")

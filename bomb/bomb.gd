@@ -27,6 +27,7 @@ func create_explosions(explosion_range_size: int) -> void:
 	for i in range(0, explosion_range_size):
 		explosion = self.explosion_packed_scene.instance()
 		self.explosions.append(explosion)
+	print(self.explosions)
 
 func place_explosions(explosions_coordinates: Array) -> void:
 	var explosion: Explosion
