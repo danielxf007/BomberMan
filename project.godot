@@ -55,6 +55,11 @@ _global_script_classes=[ {
 "path": "res://explosions_f/explosions_f.gd"
 }, {
 "base": "Node",
+"class": "ExplosionMaker",
+"language": "GDScript",
+"path": "res://explosion_maker/explosion_maker.gd"
+}, {
+"base": "Node",
 "class": "Idle",
 "language": "GDScript",
 "path": "res://character/player/movementMemory/movementStates/idle.gd"
@@ -104,6 +109,7 @@ _global_script_class_icons={
 "CrossExplosion": "",
 "Explosion": "",
 "ExplosionF": "",
+"ExplosionMaker": "",
 "Idle": "",
 "Machine": "",
 "MovementStateMachine": "",

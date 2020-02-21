@@ -3,6 +3,7 @@ extends Node
 class_name BombPlacerSystem
 
 export(NodePath) var PLAYER_NODE_PATH
+export(int) var BOMB_TYPE: int = 1
 var bomb_packed_scene: PackedScene = preload("res://bomb/Bomb.tscn")
 var player: Player
 var game_board: Board
@@ -28,6 +29,9 @@ func place_bomb() -> void:
 	var bomb_point: Position2D = self.player.bomb_point
 	if self.can_place_bomb(self.game_board.matrix_of_cells[i_coord][j_coord],
 	bomb_point.global_position):
-		var bomb = self.bomb_packed_scene.instance()
+		var bomb: Bomb = self.bomb_packed_scene.instance()
+		bomb.TYPE = self.BOMB_TYPE
+		bomb.board_coordinates = player_coord
+		bomb.game_board = self.game_board
 		self.game_board.add_child(bomb)
 		bomb.global_position = bomb_point.global_position

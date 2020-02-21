@@ -18,6 +18,4 @@ OFF_CELL = ExtResource( 2 )
 
 [node name="RedKnight" parent="." instance=ExtResource( 1 )]
 
-[node name="BombPlacementNode" type="Node" parent="."]
-
 [node name="Explosion" parent="." instance=ExtResource( 5 )]
