@@ -31,6 +31,7 @@ func get_player_coordinates_on_board() -> Tuple:
 			self.player_node.global_position)
 		if not min_distance:
 			min_distance = distance
+			board_coord = free_cell.first_element
 		elif (distance <= min_distance):
 			min_distance = distance
 			board_coord = free_cell.first_element
