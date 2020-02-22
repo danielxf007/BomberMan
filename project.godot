@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://cell/cell.gd"
 }, {
+"base": "Sprite",
+"class": "Chest",
+"language": "GDScript",
+"path": "res://game_objects/chest/chest.gd"
+}, {
 "base": "Node",
 "class": "CoordinatesConversor",
 "language": "GDScript",
@@ -105,6 +110,7 @@ _global_script_class_icons={
 "BombExplosions": "",
 "BombPlacerSystem": "",
 "Cell": "",
+"Chest": "",
 "CoordinatesConversor": "",
 "CrossExplosion": "",
 "Explosion": "",
