@@ -1,7 +1,7 @@
 extends Sprite
 class_name Chest
 
-var content
+export(int) var content = 2
 
 func set_content(new_content) -> void:
 	self.content = new_content
@@ -21,3 +21,11 @@ func _on_Area2D_body_entered(body):
 
 func _on_Timer_timeout():
 	self.queue_free()
+
+
+func _on_Area2D_body_exited(body):
+	if body.has_method("out_of_chest"):
+		body.out_of_chest()
+
+func has_content() -> bool:
+	return self.content != null

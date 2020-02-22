@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://game_objects/chest/chest.gd"
 }, {
 "base": "Node",
+"class": "ChestInteractor",
+"language": "GDScript",
+"path": "res://character/player/chest_interactor/chest_interactor.gd"
+}, {
+"base": "Node",
 "class": "CoordinatesConversor",
 "language": "GDScript",
 "path": "res://character/player/coodinates_conversor/coordinates_conversor.gd"
@@ -111,6 +116,7 @@ _global_script_class_icons={
 "BombPlacerSystem": "",
 "Cell": "",
 "Chest": "",
+"ChestInteractor": "",
 "CoordinatesConversor": "",
 "CrossExplosion": "",
 "Explosion": "",
@@ -136,6 +142,15 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=640
+
+[input]
+
+ui_open_chest={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
 
 [layer_names]
 

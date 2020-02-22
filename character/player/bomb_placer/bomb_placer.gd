@@ -4,6 +4,8 @@ class_name BombPlacerSystem
 
 export(NodePath) var PLAYER_NODE_PATH
 export(int) var BOMB_TYPE: int = 1
+export(int) var MIN_BOMB_TYPE: int = 1
+export(int) var MAX_BOMB_TYPE: int = 1
 export(float) var COOL_DOWN: float = 2.0
 var bomb_packed_scene: PackedScene = preload("res://bomb/Bomb.tscn")
 var player: Player
@@ -42,6 +44,10 @@ func place_bomb() -> void:
 			bomb.global_position = bomb_point.global_position
 			$Timer.start()
 
+func _on_ChestInteractor_bomb_boosted(quantity: int) -> void:
+	self.BOMB_TYPE += quantity
+	self.BOMB_TYPE = self.util_f.mantain_in_range(self.MIN_BOMB_TYPE,
+	 self.MAX_BOMB_TYPE, self.BOMB_TYPE)
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_accept"):

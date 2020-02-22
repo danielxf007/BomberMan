@@ -197,5 +197,14 @@ ACCELERATION = 200.0
 
 [node name="BombPoint" parent="." index="5"]
 position = Vector2( 0, 15 )
+
+[node name="ChestInteractor" parent="." index="7"]
+CHESTS_SIGNALS = {
+"BombBoosterChest": "bomb_boosted",
+"LifeChest": "got_life"
+}
+[connection signal="on_chest" from="." to="ChestInteractor" method="_on_Player_on_chest"]
+[connection signal="out_of_chest" from="." to="ChestInteractor" method="_on_Player_out_of_chest"]
 [connection signal="move" from="MovementStateMachine/Walking" to="." method="move"]
 [connection signal="move_dir_animation" from="MovementStateMachine/Walking" to="AnimationPlayer" method="play_animation"]
+[connection signal="bomb_boosted" from="ChestInteractor" to="BombPlacer" method="_on_ChestInteractor_bomb_boosted"]

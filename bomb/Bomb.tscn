@@ -77,10 +77,10 @@ anims/placed_bomb = SubResource( 4 )
 
 [node name="CrossExplosion" type="Node" parent="."]
 script = ExtResource( 5 )
-LEFT_RANGE = 2
-RIGHT_RANGE = 2
-UP_RANGE = 2
-DOWN_RANGE = 2
+LEFT_RANGE = 1
+RIGHT_RANGE = 1
+UP_RANGE = 1
+DOWN_RANGE = 1
 
 [node name="PlacedBombTimer" type="Timer" parent="."]
 one_shot = true
@@ -91,6 +91,7 @@ one_shot = true
 [node name="ExplosionTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+[connection signal="bomb_typed" from="." to="CrossExplosion" method="_on_Bomb_bomb_typed"]
 [connection signal="timeout" from="PlacedBombTimer" to="." method="_on_PlacedBombTimer_timeout"]
 [connection signal="timeout" from="ExplosionReadyTimer" to="." method="_on_ExplosionReadyTimer_timeout"]
 [connection signal="timeout" from="ExplosionTimer" to="." method="_on_ExplosionTimer_timeout"]

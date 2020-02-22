@@ -1,4 +1,5 @@
 extends Sprite
+signal bomb_typed(type)
 class_name Bomb
 
 export(int) var TYPE: int = 1
@@ -12,6 +13,7 @@ func _ready():
 	$PlacedBombTimer.start()
 
 func _on_PlacedBombTimer_timeout():
+	self.emit_signal("bomb_typed", self.TYPE)
 	$AnimationPlayer.play("bomb_ready_for_explosion")
 	$ExplosionReadyTimer.start()
 
