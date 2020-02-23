@@ -34,6 +34,9 @@ script = ExtResource( 2 )
 
 [node name="Walking" type="Node" parent="MovementStateMachine" index="1"]
 script = ExtResource( 4 )
+priority = 1
+MAX_SPEED = 100.0
+ACCELERATION = 200.0
 
 [node name="BombPoint" type="Position2D" parent="." index="5"]
 
@@ -41,7 +44,7 @@ script = ExtResource( 4 )
 "board_listener",
 ] instance=ExtResource( 7 )]
 PLAYER_NODE_PATH = NodePath("..")
-MAX_BOMB_TYPE = 4
+MAX_BOMB_TYPE = 20
 
 [node name="ChestInteractor" type="Node" parent="." index="7"]
 script = ExtResource( 8 )

@@ -14,13 +14,14 @@ func _on_Player_on_chest(chest: Chest) -> void:
 func _on_Player_out_of_chest() -> void:
 	self.current_chest = null
 
-func communicate_content(chest: Chest) -> void:
-	if chest.name in self.CHESTS_SIGNALS.keys():
-		self.emit_signal(self.CHESTS_SIGNALS[chest.name], chest.open_chest())
+func communicate_content(chest_name: String, chest_content) -> void:
+	if chest_name in self.CHESTS_SIGNALS.keys():
+		self.emit_signal(self.CHESTS_SIGNALS[chest_name], chest_content)
 
 func get_chest_content() -> void:
 	if self.current_chest and self.current_chest.has_content():
-		self.communicate_content(self.current_chest)
+		var content = self.current_chest.open_chest()
+		self.communicate_content(self.current_chest.chest_name, content)
 		self.current_chest.content_taken()
 		self.current_chest = null
 

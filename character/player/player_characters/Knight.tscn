@@ -191,11 +191,6 @@ states_map = {
 "Walking": NodePath("Walking")
 }
 
-[node name="Walking" parent="MovementStateMachine" index="1"]
-priority = 1
-MAX_SPEED = 100.0
-ACCELERATION = 200.0
-
 [node name="BombPoint" parent="." index="5"]
 position = Vector2( 0, 15 )
 

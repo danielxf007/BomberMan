@@ -2,7 +2,7 @@ extends Sprite
 class_name Chest
 
 var content
-
+var chest_name: String
 func set_content(new_content) -> void:
 	self.content = new_content
 
@@ -10,7 +10,7 @@ func open_chest():
 	return self.content
 
 func content_taken():
-	$Area2D/CollisionShape2D.disabled = true
+	self.content = null
 	$AnimationPlayer.play("chest_content_taken")
 	$Timer.start()
 
