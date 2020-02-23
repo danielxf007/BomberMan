@@ -8,11 +8,11 @@ export(Vector2) var CELL_CONTAINER_SIZE: Vector2 = Vector2()
 export(Texture) var ON_CELL
 export(Texture) var OFF_CELL
 export(bool) var PATTERN_ON_OFF = true
-
 var window: Viewport
 var matrix: Rect2
 var board_size: Vector2
 var matrix_of_cells: Array
+
 
 func _ready():
 	self.window = self.get_parent().get_viewport()

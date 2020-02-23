@@ -2,6 +2,8 @@ extends Sprite
 
 class_name Explosion
 
+
+
 func _ready():
 	$Timer.start()
 

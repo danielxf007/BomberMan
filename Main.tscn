@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://character/player/player_characters/Knight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://art/off_square.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://board/board.gd" type="Script" id=4]
 [ext_resource path="res://game_objects/chest/bomb_booster_chest/BombBoosterChest.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game_objects/obstacle/Obstacle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://board/object_placer/ObjectPlacer.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node"]
 
@@ -16,6 +17,8 @@ board_top_pos = Vector2( 32, 32 )
 CELL_CONTAINER_SIZE = Vector2( 16, 16 )
 ON_CELL = ExtResource( 3 )
 OFF_CELL = ExtResource( 2 )
+
+[node name="ObjectPlacer" parent="." instance=ExtResource( 7 )]
 
 [node name="BombBoosterChest" parent="." instance=ExtResource( 5 )]
 position = Vector2( 96.5079, 40.5539 )

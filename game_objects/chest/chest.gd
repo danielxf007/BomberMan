@@ -1,7 +1,7 @@
 extends Sprite
 class_name Chest
 
-export(int) var content = 2
+var content
 
 func set_content(new_content) -> void:
 	self.content = new_content
